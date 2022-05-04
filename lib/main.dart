@@ -8,25 +8,22 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
 Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // final cameras = await availableCameras();
-  // final firstCamera = cameras.first;
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+  final firstCamera = cameras.first;
 
   runApp(
     MaterialApp(
-        title: 'Pierced',
-        theme: ThemeData.light(),
-        home: CurateEarScreen(
-          imagePath: 'images/ear.png',
-          map: 'images/leftMap.png',
-        )
-        // TakePhoto(
-        //     camera: firstCamera,
-        //     ),
-        ),
+      title: 'Pierced',
+      theme: ThemeData.light(),
+      home: TakePhoto(
+        camera: firstCamera,
+      ),
+    ),
   );
 }
 
+// https://docs.flutter.dev/cookbook/plugins/picture-using-camera
 class TakePhoto extends StatefulWidget {
   const TakePhoto({
     Key? key,
@@ -257,8 +254,8 @@ class _CurateEarScreenState extends State<CurateEarScreen> {
           children: [
             Center(
               child: SizedBox(
-                height: 380.0,
-                width: 354.0,
+                height: 400.0,
+                width: 304.0,
                 child: Padding(
                     padding: const EdgeInsets.only(top: 10.0),
                     child: Row(
@@ -268,154 +265,148 @@ class _CurateEarScreenState extends State<CurateEarScreen> {
             ),
             Center(
                 child: SizedBox(
-                    height: 378.0,
-                    width: 415.0,
-                    child: Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(18.0, 35.0, 0.0, 0.0),
-                        child: Row(
-                          children: [Image.asset(map)],
-                        )))),
-            Padding(
-                padding: EdgeInsets.only(left: 120.0),
-                child: Center(
-                    child: SizedBox(
-                        height: 700.0,
-                        width: 500.0,
-                        child: Stack(children: const [
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/ball.png',
-                                xPosition: -40.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/ball.png',
-                                xPosition: -40.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/ball.png',
-                                xPosition: -40.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/blueStud.png',
-                                xPosition: 20.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/blueStud.png',
-                                xPosition: 20.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/blueStud.png',
-                                xPosition: 20.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/pearl.png',
-                                xPosition: 80.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/pearl.png',
-                                xPosition: 80.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/pearl.png',
-                                xPosition: 80.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/stud.png',
-                                xPosition: 140.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/stud.png',
-                                xPosition: 140.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            child: MovableStack(
-                                imagePath: 'images/stud.png',
-                                xPosition: 140.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/silverHoop.png',
-                                xPosition: 200.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/silverHoop.png',
-                                xPosition: 200.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/silverHoop.png',
-                                xPosition: 200.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/hoop.png',
-                                xPosition: 260.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/hoop.png',
-                                xPosition: 260.0,
-                                yPosition: 0.0),
-                          ),
-                          SizedBox(
-                            height: 900.0,
-                            width: 400,
-                            child: MovableStack(
-                                imagePath: 'images/hoop.png',
-                                xPosition: 260.0,
-                                yPosition: 0.0),
-                          ),
-                        ])))),
+                    height: 370.0,
+                    width: 450.0,
+                    child: Row(
+                      children: [Image.asset(map)],
+                    ))),
+            SizedBox(
+                height: 700.0,
+                width: 500.0,
+                child: Stack(children: const [
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/ball.png',
+                        xPosition: -40.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/ball.png',
+                        xPosition: -40.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/ball.png',
+                        xPosition: -40.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/blueStud.png',
+                        xPosition: 20.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/blueStud.png',
+                        xPosition: 20.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/blueStud.png',
+                        xPosition: 20.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/pearl.png',
+                        xPosition: 80.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/pearl.png',
+                        xPosition: 80.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/pearl.png',
+                        xPosition: 80.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/stud.png',
+                        xPosition: 140.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/stud.png',
+                        xPosition: 140.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    child: MovableStack(
+                        imagePath: 'images/stud.png',
+                        xPosition: 140.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/silverHoop.png',
+                        xPosition: 200.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/silverHoop.png',
+                        xPosition: 200.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/silverHoop.png',
+                        xPosition: 200.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/hoop.png',
+                        xPosition: 260.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/hoop.png',
+                        xPosition: 260.0,
+                        yPosition: 0.0),
+                  ),
+                  SizedBox(
+                    height: 900.0,
+                    width: 400,
+                    child: MovableStack(
+                        imagePath: 'images/hoop.png',
+                        xPosition: 260.0,
+                        yPosition: 0.0),
+                  ),
+                ])),
           ],
         ),
       ]),
@@ -576,7 +567,7 @@ class _HealingWidgetState extends State<HealingWidget> {
             '                                                                              '
             ' Suggested Healing Time: 6-12 Months'),
     ItemModel(
-        headerItem: 'Tragus - Anatomy dependant',
+        headerItem: 'Tragus - Anatomy Dependant',
         description:
             'Location: Center of cartilage located directly in front of ear canal '
             '                                                                              '
@@ -584,7 +575,7 @@ class _HealingWidgetState extends State<HealingWidget> {
             '                                                                              '
             ' Suggested Healing Time: 4 weeks - 6 months'),
     ItemModel(
-        headerItem: 'Anti-Tragus - Anatomy dependant',
+        headerItem: 'Anti-Tragus - Anatomy Dependant',
         description: 'Location: Opposite tragus piercing '
             '                                                                              '
             ' Hardware: Stud with flat disc back(labret) or hoops'
@@ -598,14 +589,14 @@ class _HealingWidgetState extends State<HealingWidget> {
             '                                                                              '
             ' Suggested Healing Time: 12-18 Months'),
     ItemModel(
-        headerItem: 'Daith - Anatomy dependant',
+        headerItem: 'Daith - Anatomy Dependant',
         description: 'Location: Fold of ear cartilage directly above ear canal '
             '                                                                              '
             ' Hardware: Curved barbell or hoops'
             '                                                                              '
             ' Suggested Healing Time: 4-12 Months'),
     ItemModel(
-        headerItem: 'Snug - Anatomy dependant',
+        headerItem: 'Snug - Anatomy Dependant',
         description:
             'Location: Middle fold of inner ear cartilage towards rim of ear '
             '                                                                              '
@@ -627,7 +618,7 @@ class _HealingWidgetState extends State<HealingWidget> {
             '                                                                              '
             ' Suggested Healing Time: 12-18 Months'),
     ItemModel(
-        headerItem: 'Transverse Lobe - Anatomy dependant',
+        headerItem: 'Transverse Lobe - Anatomy Dependant',
         description:
             'Location: From edge of lobe closest to cheek to middle edge of lobe '
             '                                                                              '
@@ -826,8 +817,8 @@ class _AnatomyWidgetState extends State<AnatomyWidget> {
             child: ListTile(
           title: Text('What does Anatomy Dependant mean?'),
           subtitle: Text(
-              'Certain piercings require a coversation with your piercing artist first where you will need to discuss the anatomy of your ear.'
-              ' This is because some piercings are anatomy specific and require certain features to ensure the piercing can be safey and correctly done.'
+              'Certain piercings require a conversation with your piercing artist first where you will need to discuss the anatomy of your ear.'
+              ' This is because some piercings are anatomy specific and require certain features to ensure the piercing can be safely and correctly done.'
               ' If a piercing is anatomy dependant and your piercing artist discovers you do not have the required anatomy then you will be unable to get that piercing.'
               ' The two anatomical factors that determine whether you can get a piercing are shape and size.'),
           isThreeLine: true,
